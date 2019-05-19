@@ -1,0 +1,16 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - SortUniqueNums",
+      "request": "launch",
+      "mainClass": "SortUniqueNums"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - SortSameNums",
+      "request": "launch",
+      "mainClass": "SortSameNums"
+    }
+  ]
+}
