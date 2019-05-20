@@ -14,7 +14,6 @@ class SortSameNums {
     for (int i = 0; i < position; i++) {
 
     }
-    newArr[position] = arr[i];
 
     
     return newArr;
@@ -34,29 +33,43 @@ class SortSameNums {
   public static int[] insertNewNum(int[] arr, int position, int num) {
 
     int[] newArr = new int[arr.length + 1];
-    for (int i = 0; i < position; i++) {
+    for (int i = 0; i < position - 1; i++) {
       newArr[i] = arr[i];
     }
 
-    newArr[position] = num;
 
-    for (int j = position + 1; j < arr.length; j++) {
-      newArr[j] = arr[j]; 
+    newArr[position - 1] = num;
+
+    for (int j = position; j < newArr.length; j++) {
+      newArr[j] = arr[j - 1]; 
     }
     return newArr;
   }
 
 
   public static void toString(int[] arr) {
-    for (int item: arr) {
-      System.out.println(item);
+    // for (int item: arr) {
+    //   System.out.println(item);
+    // }
+    System.out.print("{" + arr[0]);
+    for (int i = 0; i < arr.length; i++) {
+      System.out.print(", "  +  arr[i]);
     }
+    System.out.print("}");
+    System.out.println();
   }
 
   public static void main(String[] args) {
     int[] intArray = {2, 5, 2, 8, 5, 6, 8, 8};
-    sort(intArray);
 
+    System.out.println("Original array:");
+    toString(intArray);
+
+    System.out.println("Sorted array:");
+    sort(intArray);
+    toString(intArray);
+
+    System.out.println("Insert 100 at index 3:");
     toString(insertNewNum(intArray, 3, 100));
     System.out.println();
 
